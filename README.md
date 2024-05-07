@@ -20,7 +20,7 @@ This is a simple web application built with Flask that allows users to retrieve 
 1. Clone the repository:
 
     ```
-    git clone https://github.com/yourusername/weather-app.git
+    git clone https://github.com/piyushrai007/leadzen.git
     ```
 
 2. Install dependencies:
