@@ -1,8 +1,8 @@
 # Weather App
 
 This is a simple web application built with Flask that allows users to retrieve weather information for multiple cities.
-![Sample Image](Screenshot (409).png)
-![Sample Image](Screenshot (410).png)
+![Sample Image](![Screenshot (409).png](https://github.com/piyushrai007/leadzen/blob/f4a6f3f49b88f400d953c4d1906b610cf02ee9b4/Screenshot%20(409).png))
+![Sample Image]![(Screenshot (410).png](https://github.com/piyushrai007/leadzen/blob/f4a6f3f49b88f400d953c4d1906b610cf02ee9b4/Screenshot%20(410).png))
 
 
 ## Tech Stack
