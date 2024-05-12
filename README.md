@@ -32,7 +32,7 @@ This is a simple web application built with Flask that allows users to retrieve 
     pip install -r requirements.txt
     ```
 
-3. Obtain an API key from [OpenWeatherMap](https://openweathermap.org/api) and replace `'YOUR_API_KEY'` in `app.py` with your API key.
+3. Obtain an API key from [OpenWeatherMap](https://openweathermap.org/api) and replace `'YOUR_API_KEY'` in `api.py` with your API key.
 
 4. Run the Flask application:
 
