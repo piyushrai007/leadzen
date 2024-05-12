@@ -37,7 +37,7 @@ This is a simple web application built with Flask that allows users to retrieve 
 4. Run the Flask application:
 
     ```
-    python app.py
+    python api.py
     ```
 
 5. Open your web browser and navigate to `http://localhost:5000` to use the weather app.

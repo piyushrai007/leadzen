@@ -1,72 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
-        .container {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        form {
-            text-align: center;
-            margin-top: 20px;
-        }
-        label {
-            font-size: 18px;
-            margin-right: 10px;
-        }
-        input[type="text"] {
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .error {
-            color: #ff0000;
-            text-align: center;
-            margin-top: 10px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Leadzen - Weather</title>
+  <script type="module" src=""></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script><link rel="stylesheet" href="./style.css">
+<style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'poppins',sans-serif;
+    }
+    
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-image: url(https://user-images.githubusercontent.com/13468728/233847739-219cb494-c265-4554-820a-bd3424c59065.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    
+    section {
+        position: relative;
+        max-width: 400px;
+        background-color: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-radius: 20px;
+        backdrop-filter: blur(55px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 3rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+        color: #fff;
+        text-align: center;
+    }
+    
+    .inputbox {
+        position: relative;
+        margin: 30px 0;
+        max-width: 310px;
+        border-bottom: 2px solid #fff;
+    }
+    
+    .inputbox label {
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+        color: #fff;
+        font-size: 1rem;
+        pointer-events: none;
+        transition: all 0.5s ease-in-out;
+    }
+    
+    input:focus ~ label, 
+    input:valid ~ label {
+        top: -5px;
+    }
+    
+    .inputbox input {
+        width: 100%;
+        height: 60px;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        padding: 0 35px 0 5px;
+        color: #fff;
+    }
+    
+    .inputbox ion-icon {
+        position: absolute;
+        right: 8px;
+        color: #fff;
+        font-size: 1.2rem;
+        top: 20px;
+    }
+    
+    .forget {
+        margin: 35px 0;
+        font-size: 0.85rem;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+     
+    }
+    
+    .forget label {
+        display: flex;
+        align-items: center;
+    }
+    
+    .forget label input {
+        margin-right: 3px;
+    }
+    
+    .forget a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    
+    .forget a:hover {
+        text-decoration: underline;
+    }
+    
+    button {
+        width: 100%;
+        height: 40px;
+        border-radius: 40px;
+        background-color: rgb(255, 255,255, 1);
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.4s ease;
+    }
+    
+    button:hover {
+      background-color: rgb(255, 255,255, 0.5);
+    }
+    
+    .register {
+        font-size: 0.9rem;
+        color: #fff;
+        text-align: center;
+        margin: 25px 0 10px;
+    }
+    
+    .register p a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 600;
+    }
+    
+    .register p a:hover {
+        text-decoration: underline;
+    }</style>
+
+
+
+
 </head>
 <body>
-    <div class="container">
-        <h1>Weather App</h1>
+<!-- partial:index.partial.html -->
+<body>
+    <section>
         <form action="/weather" method="GET">
-            <label for="cities">Enter City Names (separated by commas):</label>
-            <input type="text" id="cities" name="cities" required>
-            <button type="submit">Get Weather Details</button>
+            <h1>Weather App</h1>
+            <div class="inputbox">
+                <ion-icon name="mail-outline"><svg height="35px" width="35px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle style="fill:#91C0F1;" cx="255.999" cy="255.998" r="255.998"></circle> <path style="fill:#D7EDF3;" d="M256,512C114.615,512,0.001,397.384,0.001,255.999S114.615,0,256,0V512z"></path> <path style="fill:#A2CE86;" d="M142.83,345.053l3.763-4.164c12.842-14.212,12.595-35.91-0.567-49.827l-2.011-2.126 c-8.623-9.118-11.989-22.007-8.927-34.176c4.016-15.959-3.08-32.639-17.363-40.814l-97.426-58.006 C7.234,186.676,0.001,220.493,0.001,255.999c0,100.778,58.241,187.938,142.892,229.702l-9.008-109.85 C131.987,364.756,135.284,353.404,142.83,345.053z"></path> <g> <path style="fill:#489B6D;" d="M436.811,74.777l-16.915,18.486c-7.363,8.047-17.639,12.812-28.537,13.235l-76.503,2.969 c-13.56,0.527-25.973,7.756-33.121,19.291l-19.61,31.644c-8.866,14.308-8.044,32.59,2.072,46.044l12.178,16.196 c9.245,12.295,14.206,27.278,14.127,42.66l-0.259,50.205c-0.136,26.442,23.649,46.589,49.708,42.106l55.769-9.597 c15.328-2.637,29.349-10.278,39.875-21.727l0,0c18.726-20.368,46.625-27.139,71.444-19.946c3.247-16.279,4.961-33.111,4.961-50.344 C512.001,185.203,483.26,121.12,436.811,74.777z"></path> <path style="fill:#489B6D;" d="M270.438,450.438L270.438,450.438c-17.042,7.556-26.831,25.666-23.817,44.062l2.854,17.416 c2.168,0.054,4.343,0.082,6.525,0.082c41.38,0,80.46-9.831,115.051-27.265l-4.36-6.497 C345.611,446.832,305.017,435.108,270.438,450.438z"></path> </g> <path style="fill:#A2CE86;" d="M145.49,101.316l51.928-29.224c8.166-4.596,14.086-12.345,16.373-21.433l12.308-48.911 c-58.35,6.789-110.711,33.189-150.316,72.45l32.275,24.542C118.906,106.986,133.616,107.999,145.49,101.316z"></path> </g></svg>
+                </ion-icon>
+              
+                    <input type="text" id="cities" name="cities" required>
+                    <label for="">Enter City Name</label>
+            </div>
+            <button>Submit</button>
+            <div class="register">
+                <p>Contributor <a href="https://instagram.com/piyush_.rai__">Piyush rai</a></p>
+            </div>
         </form>
-        {% if error %}
-        <p class="error">{{ error }}</p>
-        {% endif %}
-    </div>
+    </section>
+</body>
+<!-- partial -->
+  
 </body>
 </html>
